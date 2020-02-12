@@ -1,0 +1,44 @@
+<!--pages/posts/posts.wxml 新闻列表 -->
+<import src="post-item/post-item-template.wxml" />
+<view>
+  <!-- 头部banner -->
+  <swiper indicator-dots="true" indicator-active-color="white" autoplay="true" interval="5000" easing-function="linear" vertical="{{false}}">
+    <swiper-item>
+      <image src="/images/wx.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/vr.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/iqiyi.png"></image>
+    </swiper-item>
+  </swiper>
+
+  <!-- 新闻列表项 -->
+  <block wx:key="{{item.postId}}" wx:for="{{posts_key}}" wx:for-item="item">
+    <!-- template -->
+    <view catchtap="onPostTap" data-postId="{{item.postId}}">
+      <template is="postItem" data="{{...item}}" />
+    </view>
+  </block>
+
+</view>
+
+
+<!--
+
+【Swiper组件】
+
+  滑块视图容器，只可以放置 swiper-item 组件
+    * 决定轮播图真正宽高的取决于 swiper 组件，因此宽高需要设置在 swiper 组件上
+
+    1. 通过 indicator-dots 添加指示点
+
+【SwiperItem组件】
+  仅可以放置在 swiper 组件中，宽高自动设置为100%
+
+【其他】
+  - image 和 text 都是行内元素
+  - 若要将组件的某些属性设置为false，需要设置 prop="{{false}}"，建议真值也这样设置
+
+-->

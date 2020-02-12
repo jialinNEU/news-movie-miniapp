@@ -1,0 +1,11 @@
+<!-- wxml 是用来编写页面骨架的文件 -->
+<!-- view 相当于 div，容器、分离文档 -->
+<view class="container">
+  <!-- image 默认宽度为300 -->
+  <image class="user-avatar" src="/images/avatar/1.png"></image>
+  <!-- text 可以设置文件是否可选中 -->
+  <text class="user-name">Hello, Eddie</text>
+  <view class="moto-container" bind:tap="onTap">
+    <text class="moto">开启小程序之旅</text>
+  </view>
+</view>
