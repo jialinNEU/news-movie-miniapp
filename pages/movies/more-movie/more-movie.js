@@ -94,10 +94,9 @@ Page({
 
   onMovieTap: function (event) {
     var movieId = event.currentTarget.dataset.movieid;
-    console.log(movieId);
-    // wx.navigateTo({
-    //   url: '../movie-detail/movie-detail?id=' + movieId,
-    // });
+    wx.navigateTo({
+      url: '../movie-detail/movie-detail?id=' + movieId,
+    });
   },
 
 });
